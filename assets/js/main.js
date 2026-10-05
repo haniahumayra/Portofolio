@@ -4,9 +4,10 @@ const projectsData = [
         id: "dishcovery",
         title: "Dishcovery",
         categories: ["developer", "uiux"],
-        pills: ["LEAD DESIGNER", "FULL-STACK"],
+        pills: ["UIUX DESIGNER", "FULL-STACK"],
         role: "Full-stack Developer & UI/UX Designer (Figma)",
         icon: "fa-regular fa-file-code",
+        image: "assets/images/projects/dishcovery.png",
         description: "Dishcovery is a recipe recommendation web app where users search recipes by name and narrow down results by entering ingredients to include or avoid. Features match percentage scoring and ingredient-avoidance filtering to reduce food waste (SDG 12).",
         learnings: "I learned how to bridge the gap between design and functionality. By working on both UI/UX and full-stack integration, I gained hands-on experience in translating visual interface mockups into working database schemas and backend API endpoints.",
         links: [
@@ -21,6 +22,7 @@ const projectsData = [
         pills: ["ML ENGINEER", "BACKEND LEAD"],
         role: "ML Engineer (EDA) & Backend Lead",
         icon: "fa-solid fa-chart-line",
+        image: "assets/images/projects/loancalc.png",
         description: "A real-time loan approval prediction app powered by Flask and a Gradient Boosting Classifier trained on 4,269 records across 11 financial features. Analyzed OJK's SLIK kolektibilitas (Kol 1–5) and mapped to CIBIL credit score benchmarks.",
         learnings: "This project taught me how to think creatively around real-world constraints when data isn't available, using research and domain knowledge to adapt existing tools and bridge international datasets to local credit frameworks.",
         links: [
@@ -31,10 +33,11 @@ const projectsData = [
     {
         id: "ruangaman",
         title: "RuangAman",
-        categories: ["uiux", "ai"],
+        categories: ["uiux"],
         pills: ["PRODUCT CONCEPT", "UI/UX DESIGN"],
         role: "UI/UX Designer & Requirement Gathering Lead",
         icon: "fa-regular fa-file-shield",
+        image: "assets/images/projects/ruangaman.png",
         description: "An anonymous digital safe-space platform built to empower survivors of sexual harassment of all genders in Indonesia. Designed with privacy by default, AI comment moderation to intercept harmful replies, no public likes, and hotline access.",
         learnings: "I sketched out early designs to explore the problem space and stress-tested requirements with community feedback. I'm passionate about building digital spaces where technology directly protects user well-being and privacy.",
         links: [
@@ -49,6 +52,7 @@ const projectsData = [
         pills: ["UI/UX DESIGN", "FRONTEND"],
         role: "UI/UX Designer (Figma) & Frontend Developer",
         icon: "fa-regular fa-file-lines",
+        image: "assets/images/projects/fitfresh.png",
         description: "FitFresh Club is a web-based fitness platform providing tailored workout programs, yoga sessions, ideal body weight calculator, health blog, and training schedules. Tailored specifically for students and young adults.",
         learnings: "Good UX starts with understanding who you're designing for. Identifying our target users first made structuring content and navigation far more intentional than just building features we thought were useful.",
         links: [
@@ -59,10 +63,11 @@ const projectsData = [
     {
         id: "kelilingi_jawa",
         title: "Kelilingi Jawa",
-        categories: ["uiux", "ai"],
-        pills: ["UI/UX DESIGN", "AI MATCHMAKING"],
+        categories: ["uiux"],
+        pills: ["UI/UX DESIGN"],
         role: "UI/UX Designer & Conceptual Architect",
         icon: "fa-regular fa-compass",
+        image: "assets/images/projects/kelilingi_jawa.png",
         description: "An AI-based open trip matchmaking platform designed for travelers in Java Island. Replaces manual participant grouping with weighted criteria and similarity scoring to pair trip members with matching preferences.",
         learnings: "In conceptual simulations, similarity scoring produced consistently better participant pairings than standard filter methods, demonstrating the impact of intelligent algorithms on user experience in travel social apps.",
         links: [
@@ -73,9 +78,10 @@ const projectsData = [
         id: "shipdeckk",
         title: "ShipDecKK",
         categories: ["uiux"],
-        pills: ["UI/UX DESIGN", "MARITIME PORTAL"],
+        pills: ["UI/UX DESIGN"],
         role: "UI/UX Designer",
         icon: "fa-solid fa-ship",
+        image: "assets/images/projects/shipdeckk.png",
         description: "Website design concept for a maritime enterprise offering ship design, sales, and maintenance. Solves dense industrial navigation by presenting clear core services and guided client contact flows.",
         learnings: "Simplified visual storytelling for industrial sectors by establishing strong visual hierarchy and clear call-to-actions.",
         links: [
@@ -89,6 +95,7 @@ const projectsData = [
         pills: ["AI / NLP", "DEVELOPMENT"],
         role: "AI Developer & NLP Researcher",
         icon: "fa-solid fa-language",
+        image: "assets/images/projects/linguid.png",
         description: "Language identification and text processing system utilizing Natural Language Processing (NLP) techniques to classify language input and extract linguistic features.",
         learnings: "Explored feature extraction techniques for text classification models.",
         links: []
@@ -100,6 +107,7 @@ const projectsData = [
         pills: ["COMPUTER VISION", "RESEARCH"],
         role: "AI Researcher & Model Evaluation Lead",
         icon: "fa-regular fa-file-pdf",
+        image: "assets/images/projects/anemia_cnn.svg",
         description: "Deep learning research applying Convolutional Neural Networks (CNN) for automated anemia detection from biological imagery datasets to assist in early clinical screening.",
         learnings: "Deepened expertise in image preprocessing, dataset augmentation, and optimizing deep convolutional neural network layers for medical image classification.",
         links: [
@@ -113,6 +121,7 @@ const projectsData = [
         pills: ["COMPUTER VISION", "DEEP LEARNING"],
         role: "Computer Vision Specialist",
         icon: "fa-regular fa-file-lines",
+        image: "assets/images/projects/fruits_cnn.svg",
         description: "Computer vision model utilizing Convolutional Neural Networks for multi-class fruit image classification, evaluating model performance across variable lighting, angles, and background conditions.",
         learnings: "Studied feature extraction maps across intermediate convolutional layers and tuned hyperparameters for multi-class classification accuracy.",
         links: [
@@ -128,6 +137,8 @@ const filterBtns = document.querySelectorAll('.filter-btn');
 // Project Modal Elements
 const modal = document.getElementById('project-modal');
 const modalClose = document.getElementById('modal-close');
+const modalImageWrapper = document.getElementById('modal-image-wrapper');
+const modalImg = document.getElementById('modal-img');
 const modalTitle = document.getElementById('modal-title');
 const modalRole = document.getElementById('modal-role');
 const modalPills = document.getElementById('modal-pills');
@@ -184,6 +195,14 @@ function renderProjects(filter = 'all') {
 
 // 4. Modal Functions
 function openModal(project) {
+    if (project.image && modalImg && modalImageWrapper) {
+        modalImg.src = project.image;
+        modalImg.alt = project.title;
+        modalImageWrapper.style.display = 'block';
+    } else if (modalImageWrapper) {
+        modalImageWrapper.style.display = 'none';
+    }
+
     modalTitle.textContent = project.title;
     modalRole.textContent = project.role;
     modalDesc.textContent = project.description;
