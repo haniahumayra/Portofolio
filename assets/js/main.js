@@ -267,14 +267,16 @@ const revealSections = document.querySelectorAll('.reveal-section');
 
 const observerOptions = {
     root: null,
-    threshold: 0.12,
-    rootMargin: "0px"
+    threshold: 0.05,
+    rootMargin: "-30px 0px -30px 0px"
 };
 
-const sectionObserver = new IntersectionObserver((entries, observer) => {
+const sectionObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
+        } else {
+            entry.target.classList.remove('visible');
         }
     });
 }, observerOptions);

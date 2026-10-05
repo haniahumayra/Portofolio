@@ -39,11 +39,83 @@ body {
 /* Scroll Reveal Animations */
 .reveal-section {
     opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(35px);
+    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
 }
 
 .reveal-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered children reveal */
+.reveal-section.hero-section .hero-content,
+.reveal-section.hero-section .hero-visual,
+.reveal-section .section-title,
+.reveal-section .about-bio-card,
+.reveal-section .work-header-flex,
+.reveal-section .filter-bar,
+.reveal-section .contact-left,
+.reveal-section .contact-right {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-section.hero-section.visible .hero-content,
+.reveal-section.hero-section.visible .hero-visual,
+.reveal-section.visible .section-title,
+.reveal-section.visible .about-bio-card,
+.reveal-section.visible .work-header-flex,
+.reveal-section.visible .filter-bar,
+.reveal-section.visible .contact-left,
+.reveal-section.visible .contact-right {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-section.hero-section.visible .hero-visual {
+    transition-delay: 0.18s;
+}
+
+/* Pillar cards staggered reveal */
+.reveal-section .pillar-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.reveal-section.visible .pillar-card:nth-child(1) {
+    transition-delay: 0.15s;
+    opacity: 1;
+    transform: translateY(0);
+}
+.reveal-section.visible .pillar-card:nth-child(2) {
+    transition-delay: 0.3s;
+    opacity: 1;
+    transform: translateY(0);
+}
+.reveal-section.visible .pillar-card:nth-child(3) {
+    transition-delay: 0.45s;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Project cards staggered reveal */
+.reveal-section .project-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), box-shadow var(--transition-smooth), border-color var(--transition-smooth);
+}
+
+.reveal-section.visible .project-card:nth-child(odd) {
+    transition-delay: 0.12s;
+    opacity: 1;
+    transform: translateY(0);
+}
+.reveal-section.visible .project-card:nth-child(even) {
+    transition-delay: 0.25s;
     opacity: 1;
     transform: translateY(0);
 }
