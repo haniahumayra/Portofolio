@@ -328,16 +328,6 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// 7. Contact Form Handler
-const contactForm = document.getElementById('contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        alert('Thank you for reaching out, Haniah has received your message!');
-        contactForm.reset();
-    });
-}
-
 // Initial Render
 document.addEventListener('DOMContentLoaded', () => {
     renderProjects('all');
