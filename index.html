@@ -11,14 +11,13 @@
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=6.3">
 </head>
 <body>
 
     <!-- Header Navigation -->
     <header class="navbar">
         <div class="container nav-container">
-            <a href="#home" class="logo-text">Portfolio</a>
             <nav class="nav-links">
                 <a href="#home" class="nav-link active">HOME</a>
                 <a href="#about" class="nav-link">ABOUT</a>
@@ -59,8 +58,33 @@
                 </div>
 
                 <div class="hero-visual">
-                    <div class="avatar-card">
-                        <img src="assets/images/profile.png" alt="Haniah Humayra" class="profile-img">
+                    <div class="avatar-wrapper">
+                        <!-- Layer 1: Offset Editorial Pastel Backdrop -->
+                        <div class="avatar-backdrop-layer"></div>
+
+                        <!-- Layer 2: Main Photo Card -->
+                        <div class="avatar-card">
+                            <img src="assets/images/profile.png" alt="Haniah Humayra" class="profile-img">
+                        </div>
+
+                        <!-- Floating Glass Badge 1: Academic Focus -->
+                        <div class="hero-floating-badge badge-top">
+                            <div class="badge-text">
+                                <span class="badge-title">Intelligent Systems</span>
+                                <span class="badge-sub">@ BINUS University</span>
+                            </div>
+                        </div>
+
+                        <!-- Floating Glass Badge 2: Live Status -->
+                        <div class="hero-floating-badge badge-bottom">
+                            <span class="pulse-dot"></span>
+                            <div class="badge-text">
+                                <span class="badge-title">Open for Collaboration</span>
+                            </div>
+                        </div>
+
+                        <!-- Decorative Editorial Sparkle -->
+                        <span class="hero-sparkle" aria-hidden="true">✦</span>
                     </div>
                 </div>
             </div>
@@ -82,30 +106,92 @@
                         </p>
                     </div>
 
-                    <!-- 3 Pillars Grid -->
-                    <div class="pillars-container">
-                        <div class="pillar-card">
-                            <span class="pillar-num">01. DATA</span>
-                            <h3 class="pillar-title">Exploratory Data Analysis</h3>
-                            <p class="pillar-desc">
-                                Cleaning, exploring, and making sense of messy data, including imbalanced and limited datasets, to find the story behind the numbers.
-                            </p>
+                    <!-- 5 Pillars Semi-Circle Arc Carousel -->
+                    <div class="pillars-arc-wrapper" id="pillars-arc-wrapper">
+                        <div class="pillars-arc-stage" id="pillars-arc-stage">
+                            <div class="pillars-arc-track" id="pillars-arc-track">
+                                <!-- Pillar 01: Data -->
+                                <div class="pillar-arc-card" data-index="0">
+                                    <div class="pillar-card-inner">
+                                        <div class="pillar-card-top">
+                                            <span class="pillar-num">01. DATA</span>
+                                        </div>
+                                        <h3 class="pillar-title">Exploratory Data Analysis</h3>
+                                        <p class="pillar-desc">
+                                            Cleaning, exploring, and making sense of messy data, including imbalanced and limited datasets, to find the story behind the numbers.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- Pillar 02: Logic / Python -->
+                                <div class="pillar-arc-card" data-index="1">
+                                    <div class="pillar-card-inner">
+                                        <div class="pillar-card-top">
+                                            <span class="pillar-num">02. LOGIC</span>
+                                        </div>
+                                        <h3 class="pillar-title">Python & Pipelines</h3>
+                                        <p class="pillar-desc">
+                                            Building data pipelines, feature engineering, and backend APIs that carry analysis from notebook to working application.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- Pillar 03: Intelligence / ML -->
+                                <div class="pillar-arc-card" data-index="2">
+                                    <div class="pillar-card-inner">
+                                        <div class="pillar-card-top">
+                                            <span class="pillar-num">03. INTELLIGENCE</span>
+                                        </div>
+                                        <h3 class="pillar-title">Machine Learning</h3>
+                                        <p class="pillar-desc">
+                                            Training and evaluating models for NLP, computer vision, and prediction, then explaining what the results actually mean.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- Pillar 04: Development -->
+                                <div class="pillar-arc-card" data-index="3">
+                                    <div class="pillar-card-inner">
+                                        <div class="pillar-card-top">
+                                            <span class="pillar-num">04. DEVELOPER</span>
+                                        </div>
+                                        <h3 class="pillar-title">Frontend & Web Dev</h3>
+                                        <p class="pillar-desc">
+                                            Crafting responsive, performant web interfaces and connecting machine learning services to seamless client experiences.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- Pillar 05: UI/UX Design -->
+                                <div class="pillar-arc-card" data-index="4">
+                                    <div class="pillar-card-inner">
+                                        <div class="pillar-card-top">
+                                            <span class="pillar-num">05. DESIGN</span>
+                                        </div>
+                                        <h3 class="pillar-title">UI/UX & Product Design</h3>
+                                        <p class="pillar-desc">
+                                            Designing intuitive user journeys, wireframes, and design systems in Figma that transform complex algorithms into approachable interfaces.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="pillar-card">
-                            <span class="pillar-num">02. LOGIC</span>
-                            <h3 class="pillar-title">Python</h3>
-                            <p class="pillar-desc">
-                                Building data pipelines, feature engineering, and backend APIs that carry analysis from notebook to working application.
-                            </p>
-                        </div>
-
-                        <div class="pillar-card">
-                            <span class="pillar-num">03. INTELLIGENCE</span>
-                            <h3 class="pillar-title">Machine Learning</h3>
-                            <p class="pillar-desc">
-                                Training and evaluating models for NLP, computer vision, and prediction, then explaining what the results actually mean.
-                            </p>
+                        <!-- Arc Controls (Arrows + 5 Dots) -->
+                        <div class="arc-controls">
+                            <button class="arc-nav-btn" id="arc-prev-btn" title="Previous pillar" aria-label="Previous pillar">
+                                <i class="fa-solid fa-arrow-left"></i>
+                            </button>
+                            <div class="arc-dots" id="arc-dots">
+                                <button class="arc-dot active" data-index="0" aria-label="Go to Pillar 01 (Data)"></button>
+                                <button class="arc-dot" data-index="1" aria-label="Go to Pillar 02 (Logic)"></button>
+                                <button class="arc-dot" data-index="2" aria-label="Go to Pillar 03 (Intelligence)"></button>
+                                <button class="arc-dot" data-index="3" aria-label="Go to Pillar 04 (Developer)"></button>
+                                <button class="arc-dot" data-index="4" aria-label="Go to Pillar 05 (Design)"></button>
+                            </div>
+                            <button class="arc-nav-btn" id="arc-next-btn" title="Next pillar" aria-label="Next pillar">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -127,13 +213,30 @@
                     </div>
                 </div>
 
-                <!-- Category Filters -->
+                <!-- Category Filters (Soft Pill Capsule Tabs) -->
                 <div class="filter-bar">
-                    <button class="filter-btn active" data-filter="all">ALL</button>
-                    <button class="filter-btn" data-filter="data">DATA</button>
-                    <button class="filter-btn" data-filter="ai">AI</button>
-                    <button class="filter-btn" data-filter="developer">DEVELOPER</button>
-                    <button class="filter-btn" data-filter="uiux">UI/UX</button>
+                    <div class="filter-capsule">
+                        <button class="filter-btn active" data-filter="all">
+                            <span class="filter-label">ALL</span>
+                            <span class="filter-count">9</span>
+                        </button>
+                        <button class="filter-btn" data-filter="data">
+                            <span class="filter-label">DATA</span>
+                            <span class="filter-count">3</span>
+                        </button>
+                        <button class="filter-btn" data-filter="ai">
+                            <span class="filter-label">AI</span>
+                            <span class="filter-count">4</span>
+                        </button>
+                        <button class="filter-btn" data-filter="developer">
+                            <span class="filter-label">DEVELOPER</span>
+                            <span class="filter-count">4</span>
+                        </button>
+                        <button class="filter-btn" data-filter="uiux">
+                            <span class="filter-label">UI/UX</span>
+                            <span class="filter-count">5</span>
+                        </button>
+                    </div>
                 </div>
 
                 <!-- Projects Grid -->
@@ -223,6 +326,6 @@
     </div>
 
     <!-- Custom JS -->
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js?v=6.3"></script>
 </body>
 </html>
