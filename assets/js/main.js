@@ -115,7 +115,7 @@ const projectsData = [
     {
         id: "anemia_cnn",
         title: "Anemia Detection Using CNN",
-        categories: ["ai", "data"],
+        categories: ["ai"],
         pills: ["COMPUTER VISION", "RESEARCH"],
         role: "AI Researcher & Model Evaluation Lead",
         icon: "fa-solid fa-microscope",
@@ -130,8 +130,8 @@ const projectsData = [
     {
         id: "fruits_cnn",
         title: "Fruits Classification Using CNN",
-        categories: ["ai", "data"],
-        pills: ["COMPUTER VISION", "DEEP LEARNING"],
+        categories: ["ai"],
+        pills: ["COMPUTER VISION", "RESEARCH"],
         role: "Computer Vision Specialist",
         icon: "fa-solid fa-brain",
         highlight: "Multi-Class CNN • Image Feature Maps • Hyperparameter Tuning",
