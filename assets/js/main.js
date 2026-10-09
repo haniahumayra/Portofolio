@@ -141,6 +141,20 @@ const projectsData = [
         links: [
             { label: "View Final Report (PDF)", url: "assets/docs/fruits_report.pdf", icon: "fa-solid fa-file-pdf" }
         ]
+    },
+    {
+        id: "portfolio_website",
+        title: "Portfolio Website",
+        categories: ["uiux", "developer"],
+        pills: ["FRONTEND DEVELOPER", "UI/UX DESIGNER"],
+        role: "Frontend Developer & UI/UX Designer",
+        icon: "fa-solid fa-laptop-code",
+        image: "assets/images/projects/portofolio.png",
+        description: "A responsive portfolio website showcasing my projects and skills as a frontend developer and UI/UX designer.",
+        learnings: "Enhanced my understanding of modern web development practices, including responsive design, accessibility, and performance optimization.",
+        links: [
+            { label: "GitHub Repository", url: "https://github.com/haniahumayra/Portofolio", icon: "fa-solid fa-globe" }
+        ]
     }
 ];
 
