@@ -139,7 +139,9 @@ const projectsData = [
         description: "Computer vision model utilizing Convolutional Neural Networks for multi-class fruit image classification, evaluating model performance across variable lighting, angles, and background conditions.",
         learnings: "Studied feature extraction maps across intermediate convolutional layers and tuned hyperparameters for multi-class classification accuracy.",
         links: [
-            { label: "View Final Report (PDF)", url: "assets/docs/fruits_report.pdf", icon: "fa-solid fa-file-pdf" }
+            { label: "View Final Report (PDF)", url: "assets/docs/fruits_report.pdf", icon: "fa-solid fa-file-pdf" },
+            { label: "GitHub Repository", url: "https://github.com/vebynovalisa/fruit-freshness-classification", icon: "fa-brands fa-github" }
+
         ]
     },
     {
