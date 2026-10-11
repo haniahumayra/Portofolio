@@ -145,6 +145,21 @@ const projectsData = [
         ]
     },
     {
+        id: "transport_delays",
+        title: "Public Transit Delays Analysis",
+        categories: ["data", "ai"],
+        pills: ["DATA ANALYSIS", "MACHINE LEARNING", "EXPLORATORY DATA ANALYSIS"],
+        role: "Data Analyst & ML Modeling",
+        icon: "fa-solid fa-bus",
+        highlight: "2,000 Records • Target Leakage Audit • Baseline & ROC-AUC Evaluation",
+        image: "assets/images/projects/transport-delays.png",
+        description: "An in-depth data analysis and predictive modeling project evaluating transit delays across weather, traffic, and event factors. Uncovered critical data quality anomalies (synthetic patterns), prevented target leakage, and evaluated classification & regression models against majority-class baselines.",
+        learnings: "Demonstrated that a 75% accuracy metric was merely reflecting class imbalance rather than true model learning (ROC-AUC ~0.50). Gained valuable experience in identifying synthetic dataset limitations, auditing target leakage, and validating predictive signals before operational deployment.",
+        links: [
+            { label: "GitHub Repository", url: "https://github.com/haniahumayra/Public-Transit-Delay-Analysis-Prediction", icon: "fa-brands fa-github" }    
+        ]
+    },
+    {
         id: "portfolio_website",
         title: "Portfolio Website",
         categories: ["uiux", "developer"],
