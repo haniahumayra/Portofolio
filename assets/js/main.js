@@ -160,6 +160,21 @@ const projectsData = [
         ]
     },
     {
+        id: "sleep_disorder",
+        title: "Sleep Disorder Prediction",
+        categories: ["data", "ai"],
+        pills: ["DATA ANALYSIS", "MACHINE LEARNING", "EXPLORATORY DATA ANALYSIS"],
+        role: "Data Analyst & ML Modeling",
+        icon: "fa-solid fa-bed-pulse",
+        highlight: "93.3% Accuracy • Multi-Class Classification • 93% Insomnia Recall",
+        image: "assets/images/projects/sleep-disorder.png",
+        description: "A machine learning screening model predicting sleep disorders (None, Insomnia, Sleep Apnea) from lifestyle, biometric, and occupational data. Implemented end-to-end preprocessing pipelines, blood pressure feature extraction, and multi-class Random Forest evaluation.",
+        learnings: "Optimized multi-class model sensitivity to achieve 93% recall on Insomnia, prioritizing early clinical screening while maintaining 1.00 precision on healthy individuals. Analyzed critical occupational and lifestyle correlations impacting sleep health.",
+        links: [
+            { label: "GitHub Repository", url: "https://github.com/haniahumayra/Sleep-disorder-prediction", icon: "fa-brands fa-github" }
+        ]
+    },
+    {
         id: "portfolio_website",
         title: "Portfolio Website",
         categories: ["uiux", "developer"],
