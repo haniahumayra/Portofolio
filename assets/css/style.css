@@ -1309,6 +1309,8 @@ img {
     position: fixed;
     top: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.65);
@@ -1316,14 +1318,15 @@ img {
     -webkit-backdrop-filter: blur(8px);
     z-index: 1000;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     opacity: 0;
     pointer-events: none;
     transition: opacity var(--transition-smooth);
-    padding: 1.5rem 1rem;
+    padding: 2.5rem 1rem;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
 }
 
 .modal-overlay.active {
@@ -1335,18 +1338,14 @@ img {
     background-color: var(--bg-main);
     width: 100%;
     max-width: 750px;
-    max-height: 88vh;
     border-radius: 24px;
     padding: 3rem 2.5rem;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    overscroll-behavior: contain;
-    touch-action: pan-y;
     position: relative;
     transform: translateY(30px);
     transition: transform var(--transition-smooth);
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
-    margin: auto;
+    margin: auto 0;
+    touch-action: pan-y;
 }
 
 .modal-overlay.active .modal-content {
@@ -1585,8 +1584,7 @@ img {
         border-radius: 100px 100px 0 100px;
     }
     .modal-content {
-        padding: 2.5rem 1.4rem 2rem 1.4rem;
-        max-height: 92vh;
+        padding: 2.2rem 1.4rem 2rem 1.4rem;
         border-radius: 20px;
     }
     .modal-close {
@@ -1603,6 +1601,7 @@ img {
     }
     .cv-modal-content {
         padding: 1.4rem 1rem;
-        height: 92vh;
+        max-height: 90vh;
+        overflow-y: auto;
     }
 }
