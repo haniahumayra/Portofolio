@@ -1318,15 +1318,14 @@ img {
     -webkit-backdrop-filter: blur(8px);
     z-index: 1000;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     opacity: 0;
     pointer-events: none;
     transition: opacity var(--transition-smooth);
-    padding: 2.5rem 1rem;
+    padding: 1.5rem 1rem;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    touch-action: pan-y;
 }
 
 .modal-overlay.active {
@@ -1338,14 +1337,17 @@ img {
     background-color: var(--bg-main);
     width: 100%;
     max-width: 750px;
+    max-height: 85vh;
     border-radius: 24px;
     padding: 3rem 2.5rem;
     position: relative;
     transform: translateY(30px);
     transition: transform var(--transition-smooth);
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
-    margin: auto 0;
-    touch-action: pan-y;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    touch-action: pan-y !important;
+    overscroll-behavior: contain;
 }
 
 .modal-overlay.active .modal-content {
@@ -1586,6 +1588,10 @@ img {
     .modal-content {
         padding: 2.2rem 1.4rem 2rem 1.4rem;
         border-radius: 20px;
+        max-height: 88vh;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        touch-action: pan-y !important;
     }
     .modal-close {
         top: 1rem;
